@@ -1,0 +1,40 @@
+/* Add this CSS to your stylesheet or within a <style> tag in the <head> section */
+
+.form-signin {
+    height: 100vh; /* Make the main element take up the full viewport height */
+  }
+  
+  /* This class helps to center the content horizontally and vertically */
+  .d-flex {
+    display: flex;
+  }
+  
+  .align-items-center {
+    align-items: center;
+  }
+  
+  .justify-content-center {
+    justify-content: center;
+  }
+
+  body {
+    background-image: url("images/student-studying.png"); /* Replace with the path to your image */
+    background-size: contain; /* Adjust how the image covers the background */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position:center ;
+  }
+
+  .outside-login {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    height: 80vh; /* Make the box full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
+  
