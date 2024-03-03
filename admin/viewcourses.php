@@ -1,9 +1,15 @@
 <?php
-include '../dashboard_2.php';
+
+include_once '../common/template.php';
+
+// HTML boilerplate
 templateHeader();
-require_once('../config/db.php');
-$query = "select * from course_form";
-$result = mysqli_query($con,$query);
+templateTopNav();
+leftPane('dashboard','','admin');
+
+// require_once('../config/db.php');
+// $query = "select * from course_form";
+// $result = mysqli_query($con,$query);
 
 ?>
 
