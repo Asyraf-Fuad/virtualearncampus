@@ -1,6 +1,6 @@
 <?php
 
-include_once '../includes/dbconnect.php';
+include_once './database/dbconnect.php';
 
 ?>
 
@@ -40,8 +40,7 @@ include_once '../includes/dbconnect.php';
     <div class="outside-login">
         <main class="form-signin text-center d-flex align-items-center justify-content-center">
             <form class="mx-auto" action="includes/login.inc.php" method="POST">
-                <img class="mb-4 mt-3" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-                <h1 class="h3 mb-3 fw-normal">Student Portal</h1>
+                <h1 class="h3 mt-4 mb-3 fw-normal">Student Portal</h1>
       
                 <div class="form-floating mx-auto col-md-15">
                     <input type="text" class="form-control" id="floatingInput" placeholder="User ID" name="loginUserid">

@@ -1,7 +1,11 @@
 <?php
-    
-    include '../dashboard_2.php';
-    templateHeader();
+
+include_once '../common/template.php';
+
+// HTML boilerplate
+templateHeader();
+templateTopNav();
+leftPane('dashboard','','admin');
 ?>
 
 

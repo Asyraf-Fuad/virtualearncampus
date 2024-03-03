@@ -45,7 +45,7 @@ if (isset($_POST['login-submit'])) {
 
                         //print_r($row);
                         session_start();
-                        header("Location: ../dashboard/index.php");
+                        header("Location: ../admin/index.php");
                     
                         // header("Location: ../login.php?login=success");
                 
