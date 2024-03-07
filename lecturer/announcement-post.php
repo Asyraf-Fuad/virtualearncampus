@@ -27,7 +27,7 @@ leftPane('announcements','announcement-post','lecturer');
             ?>
           </div>
               
-          <form action="includes/dbinsert.php?table=announcement" method="POST" class="needs-validation" novalidate>
+          <form action="database/dbinsert.php?table=announcement" method="POST" class="needs-validation" novalidate>
                         
             <hr class="mb-4">
             <div class="row gy-3">

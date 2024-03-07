@@ -16,11 +16,10 @@
       ?>
 
       <div class="table-responsive">
-      <form action="includes/dbinsert.php?table=add-courses" method="POST">
         
       <?php
 
-      $sql = "SELECT * FROM courses;";
+      $sql = "SELECT * FROM courses LEFT JOIN users ON courses.lecturer_id = users.user_id;";
       $result = mysqli_query($conn, $sql);
       $resultCheck = mysqli_num_rows($result);
 
@@ -53,15 +52,21 @@
 
           <td><?php echo $row['course_id']; ?></td> 
           <td><?php echo $row['course_name']; ?></td>
-          <td><?php echo $row['lecturer_id']; ?></td>
-          <td><button class='btn btn-primary mx-3' type='view' name='action' value='View="<?php echo $row['course_id'] ?>"'>View</button></td>
+          <td><?php echo $row['username']; ?></td>
+          <!-- <td><button class='btn btn-primary mx-3' type='view' name='action' value='View="<?php echo $row['course_id'] ?>"'>View</button></td> -->
+          <td>
+          <form action="../database/dbinsert.php?table=add-courses" method="post">
+          <input type="hidden" name="course_id" value="<?php echo $row['course_id']?>">
+          <input type="submit" name="action" class="btn btn-primary" value="View">
+          </form>
+          </td>
           
           <?php
           if($user=='admin') {
           ?> 
           <td>
-          <form action="updatecourses.php" method="post">
-          <input type="hidden" name="courseID" value="<?php echo $row['courseID']?>">
+          <form action="course-edit.php" method="post">
+          <input type="hidden" name="course_id" value="<?php echo $row['course_id']?>">
           <input type="submit" name="edit" class="btn btn-primary" value="Edit">
           </form>
           </td>
@@ -111,7 +116,6 @@
         }
       ?>
 
-      </form>
       </div>
 
 

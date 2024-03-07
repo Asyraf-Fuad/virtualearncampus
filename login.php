@@ -39,7 +39,7 @@ include_once './database/dbconnect.php';
     
     <div class="outside-login">
         <main class="form-signin text-center d-flex align-items-center justify-content-center">
-            <form class="mx-auto" action="includes/login.inc.php" method="POST">
+            <form class="mx-auto" action="database/login.inc.php" method="POST">
                 <h1 class="h3 mt-4 mb-3 fw-normal">Student Portal</h1>
       
                 <div class="form-floating mx-auto col-md-15">

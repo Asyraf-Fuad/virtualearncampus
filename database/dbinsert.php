@@ -39,13 +39,13 @@ if ($_GET['table']=='add-courses' && $_POST['action']=='AddCourse') {
     }
 }
 
-else if ($_GET['table']=='add-courses'&&strpos($_POST['action'],'View')===0) {
-    $selectedID = substr($_POST['action'], strpos($_POST['action'], "=") + 1); 
+else if ($_GET['table']=='add-courses'&&$_POST['action']=='View') {
+    $selectedID = $_POST['course_id']; 
         $sql = "SELECT * FROM courses WHERE course_id =$selectedID;";
         mysqli_query($conn, $sql);
     
 
-header("Location: ../course-view.php?course_id=$selectedID");
+header("Location:admin/course-view.php?course_id=$selectedID");
 }
 
 //lecturer
@@ -83,13 +83,13 @@ if ($_GET['table']=='announcement') {
     }
     }
     
-    else if ($_GET['table']=='add-courses'&&strpos($_POST['action'],'View')===0) {
-        $selectedID = substr($_POST['action'], strpos($_POST['action'], "=") + 1); 
+    else if ($_GET['table']=='add-courses'&&$_POST['action']=='View') {
+        $selectedID = $_POST['course_id']; 
             $sql = "SELECT * FROM courses WHERE course_id =$selectedID;";
             mysqli_query($conn, $sql);
         
     
-    header("Location: ../course-view.php?course_id=$selectedID");
+    header("Location:../admin/course-view.php?course_id=$selectedID");
     }
 ?>
 

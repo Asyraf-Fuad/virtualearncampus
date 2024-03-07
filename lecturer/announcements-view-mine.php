@@ -25,7 +25,7 @@ leftPane('announcements','announcements-view-mine','lecturer');
       ?>
 
       <div class="table-responsive">
-      <form action="includes/dbdelete.php?table=announcement" method="post">
+      <form action="database/dbdelete.php?table=announcement" method="post">
         
       <?php
       // $username="Mr Alex";

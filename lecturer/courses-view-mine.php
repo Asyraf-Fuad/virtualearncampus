@@ -28,7 +28,7 @@ leftPane('courses', 'courses-view-mine', 'lecturer');
       ?>
 
       <div class="table-responsive">
-      <form action="includes/dbinsert.php?table=add-courses" method="POST">
+      <form action="database/dbinsert.php?table=add-courses" method="POST">
         
       <?php
 

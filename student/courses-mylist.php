@@ -28,7 +28,7 @@ leftPane('courses','courses-mylist','student');
       ?>
 
       <div class="table-responsive">
-      <form action="includes/dbdelete.php?table=add-courses" method="post">
+      <form action="database/dbdelete.php?table=add-courses" method="post">
 
       <?php
 

@@ -6,10 +6,10 @@ include_once '../database/dbconnect.php';
 // HTML boilerplate
 templateHeader();
 templateTopNav();
-leftPane('courses', '', 'lecturer');
+leftPane('courses', '', 'admin');
 
 global $user;
-$user='Mr Alex';
+$user='admin';
 include_once '../common/course-view.php';
 
 ?>

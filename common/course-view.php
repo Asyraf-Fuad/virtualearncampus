@@ -1,7 +1,7 @@
             <?php      
             if(isset($_GET['course_id'])) {
               $selectedID=$_GET['course_id'];
-              $sql = "SELECT * FROM courses WHERE course_id =$selectedID;";
+              $sql = "SELECT * FROM courses LEFT JOIN users ON courses.lecturer_id = users.user_id WHERE course_id =$selectedID;";
               $result = mysqli_query($conn, $sql);
               $resultCheck = mysqli_num_rows($result);
               }
@@ -47,13 +47,13 @@
               </div> -->
 
               <div class="col-sm-12">
-                <label for="lecturerName" class="form-label">Course Lecturer: </label>
-                <text><?php echo $row['lecturer_name'] ?></text>
+                <label for="lecturerID" class="form-label">Course Lecturer: </label>
+                <text><?php echo $row['username'] ?></text>
               </div>
 
               <div class="col-sm-12">
-                <label for="lecturerName" class="form-label">Lecturer Email: </label>
-                <text><?php echo $row['lecturer_email'] ?></text>
+                <label for="courseDuration" class="form-label">Course Duration: </label>
+                <text><?php echo $row['course_duration'] ?></text>
               </div>
 
               <div class="col-12">
