@@ -26,18 +26,20 @@ leftPane('courses','course-new','admin');
         <h1 class="h2">Register</h1> 
       </div>
 
-<form action="connect.php" method="post">
+<form action="../database/admin/dbinsert.php" method="post">
 <p>Please fill in this form to add new course</p>
   <label for="name">Course name:</label><br>
-  <input type="text" id="courseName" name="courseName" required><br>
-  <label for="lname">Course ID:</label><br>
-  <input type="text" id="courseID" name="courseID" required><br>
+  <input type="text" id="course_name" name="course_name" required><br>
+  <!-- <label for="lname">Course ID:</label><br>
+  <input type="text" id="courseID" name="courseID" required><br> -->
   <label for="fname">Course description:</label><br>
-  <input type="text" id="courseDesc" name="courseDesc" required><br>
+  <input type="text" id="course_description" name="course_description" required><br>
   <label for="fname">Course lecturer ID:</label><br>
-  <input type="text" id="courseLecID" name="courseLecID" required><br>
+  <input type="text" id="lecturer_id" name="lecturer_id" required><br>
   <label for="fname">Course duration:</label><br>
-  <input type="text" id="courseDura" name="courseDura" required><br>
+  <input type="text" id="course_duration" name="course_duration" required><br>
+  <label for="fname">Course arrangement:</label><br>
+  <input type="text" id="course_arrangement" name="course_arrangement" required><br>
   <br>
   <input type="submit" value="Add">
 </form>

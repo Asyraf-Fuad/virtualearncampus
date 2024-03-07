@@ -73,7 +73,7 @@
 
           <td>
             <form action="../database/admin/dbdelete.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+            <input type="hidden" name="course_id" value="<?php echo $row['course_id'] ?>">
             <input type="submit" name="delete" class="btn btn-danger" value="Delete"> 
             </form>
           </td>

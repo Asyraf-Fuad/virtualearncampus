@@ -5,7 +5,7 @@ include_once '../common/template.php';
 // HTML boilerplate
 templateHeader();
 templateTopNav();
-leftPane('courses','course-new','admin');
+leftPane('courses','course-list','admin');
 
 ?>
 
@@ -19,17 +19,17 @@ leftPane('courses','course-new','admin');
 
     $query = "SELECT * FROM courses WHERE course_id=$id";
     $query_run = mysqli_query($connection, $query);
-
+    
     if($query_run)
     {
-        while($row = mysqli_fetch_array($query_run))
-        {
+        while($row = mysqli_fetch_array($result)) {     
             ?>
+            
                       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">PHP - CRUD : Update Data</h1>
                         </div>
                             <form action="" method="post">
-                                <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['course_id'] ?>">
                                 <!-- <div class="form-group">
                                     <label for=""> id </label>
                                     <input type="text" name="id" class="form-control" value="<?php echo $row['id'] ?>" placeholder="Enter First Name" required>
@@ -54,6 +54,10 @@ leftPane('courses','course-new','admin');
                                     <label for=""> Course Duration </label>
                                     <input type="text" name="course_duration" class="form-control" value="<?php echo $row['course_duration'] ?>" placeholder="Enter Last Name" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for=""> Course Arrangment </label>
+                                    <input type="text" name="course_arrangement" class="form-control" value="<?php echo $row['course_arrangement'] ?>" placeholder="Enter Last Name" required>
+                                </div>
 
                                 <button type="submit" name="update" class="btn btn-primary"> Update Data </button>
 
@@ -69,8 +73,9 @@ leftPane('courses','course-new','admin');
                         $course_description = $_POST['course_description'];
                         $lecturer_id = $_POST['lecturer_id'];
                         $course_duration = $_POST['course_duration'];
+                        $course_arrangement = $_POST['course_arrangement'];
 
-                        $query = "UPDATE courses SET course_name='$course_name', course_id='$course_id', course_description='$course_description', lecturer_id='$lecturer_id', course_duration='$course_duration' WHERE course_id='$course_id'  ";
+                        $query = "UPDATE courses SET course_name='$course_name', course_description='$course_description', lecturer_id='$lecturer_id', course_duration='$course_duration', course_arrangement='$course_arrangement' WHERE course_id='$course_id'  ";
                         $query_run = mysqli_query($connection, $query);
 
                         if($query_run)
