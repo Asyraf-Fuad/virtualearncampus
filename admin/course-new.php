@@ -5,7 +5,8 @@ include_once '../common/template.php';
 // HTML boilerplate
 templateHeader();
 templateTopNav();
-leftPane('dashboard','','admin');
+leftPane('courses','course-new','admin');
+
 ?>
 
 
@@ -21,8 +22,11 @@ leftPane('dashboard','','admin');
             }
             ?>
 
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Register</h1> 
+      </div>
+
 <form action="connect.php" method="post">
-<h1>Register</h1>
 <p>Please fill in this form to add new course</p>
   <label for="name">Course name:</label><br>
   <input type="text" id="courseName" name="courseName" required><br>

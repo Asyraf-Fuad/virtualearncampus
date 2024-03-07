@@ -37,7 +37,7 @@ leftPane('announcements','', 'lecturer');
             Are you sure you want to update the announcement?
             </div>
 
-        <form action="includes/dbupdate.php?table=announcement" method="POST" class="needs-validation" novalidate>
+        <form action="database/dbupdate.php?table=announcement" method="POST" class="needs-validation" novalidate>
                         
           <hr class="mb-4">
             <div class="row gy-3">

@@ -120,7 +120,7 @@ header("location: ../error.php?status=deactivated");
 if ($page=='courses'){ 
     { $activeCourses='active'; $showCourses='show';}
     if ($table=='courses-list'){$activeCoursesList='active';}
-    else if ($table=='courses-mylist'||$table=='courses-view-mine'){$activeCoursesMyList='active';} }
+    else if ($table=='course-new'||$table=='courses-mylist'||$table=='courses-view-mine'){$activeCoursesMyList='active';} }
 // if ($userAuth=='Admin'): ?>
 <li class='nav-item'>
     <a class='nav-link accordion-header <?php echo $activeCourses ?>' data-bs-toggle='collapse' href='#collapseCourses' role='button' aria-expanded='false' aria-controls='collapseCourses'>
@@ -133,7 +133,7 @@ if ($page=='courses'){
         <ul class='nav flex-column sub-menu'>
         <li class='nav-item'><i class='glyphicon glyphicon-home'></i><a class='nav-link <?php echo $activeCoursesList ?>' href='courses-list.php'>View All Courses</a></li>
         <?php if ($user=='admin'){ ?>
-        <li class='nav-item'> <a class='nav-link <?php echo $activeCoursesMyList ?>' href='courses.php'>Add New Courses</a></li>
+        <li class='nav-item'> <a class='nav-link <?php echo $activeCoursesMyList ?>' href='course-new.php'>Add New Course</a></li>
         <?php } ?>
         <?php if ($user=='student'){ ?>
         <li class='nav-item'> <a class='nav-link <?php echo $activeCoursesMyList ?>' href='courses-mylist.php'>View My Courses</a></li>

@@ -10,6 +10,6 @@ leftPane('courses', '', 'student');
 
 global $user;
 $user='student';
-include_once '../course-view.php';
+include_once '../common/course-view.php';
 
 ?>

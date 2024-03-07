@@ -7,7 +7,7 @@
       </div>
 
       <div class="table-responsive">
-      <form action="includes/dbdelete.php?table=announcement" method="post">
+      <form action="database/dbdelete.php?table=announcement" method="post">
         
       <?php
 

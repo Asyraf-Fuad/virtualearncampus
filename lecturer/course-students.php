@@ -48,7 +48,7 @@ global $courseID; global $courseName;
       <div class="table-responsive">     
 
       <?php if(isset($_GET['page']) && $_GET['page']=='edit_page'){ ?>
-        <form action="includes/dbupdate.php?table=added_courses&course_id=<?php echo $courseID ?>" method="POST">
+        <form action="database/dbupdate.php?table=added_courses&course_id=<?php echo $courseID ?>" method="POST">
       <?php } else { ?>
         <form action="course-students.php?course_id=<?php echo $courseID ?>&page=edit_page" method="POST">
       <?php } ?>
