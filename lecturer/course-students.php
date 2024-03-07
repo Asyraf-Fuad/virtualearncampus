@@ -8,7 +8,7 @@ templateHeader();
 templateTopNav();
 leftPane('courses', 'course-students', 'lecturer');
 
-global $courseID; global $courseName;
+global $courseID; global $course_name;
 
 ?>
 <!-- Page Content -->
@@ -24,7 +24,7 @@ global $courseID; global $courseName;
         if ($resultCheck >0){
           while ($row = mysqli_fetch_assoc($result))
         {
-          $courseName=$row['course_name'];
+          $course_name=$row['course_name'];
         }
         }
         ?>
@@ -32,7 +32,7 @@ global $courseID; global $courseName;
 
         <div>
         <h6>Course ID: <?php echo $courseID ?></h6>
-        <h6>Course Name: <?php echo $courseName ?></h6>
+        <h6>Course Name: <?php echo $course_name ?></h6>
         </div>
       </div>
 

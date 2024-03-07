@@ -42,7 +42,7 @@
               </div>
 
               <div class="col-sm-12">
-                <label for="courseName" class="form-label">Course Name: </label>
+                <label for="course_name" class="form-label">Course Name: </label>
                 <text>?php echo $row['course_name'] ?></text>
               </div> -->
 
@@ -52,7 +52,7 @@
               </div>
 
               <div class="col-sm-12">
-                <label for="courseDuration" class="form-label">Course Duration: </label>
+                <label for="course_durationtion" class="form-label">Course Duration: </label>
                 <text><?php echo $row['course_duration'] ?></text>
               </div>
 
