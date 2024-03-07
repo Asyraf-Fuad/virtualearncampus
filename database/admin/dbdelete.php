@@ -1,19 +1,19 @@
 <?php
 
 $connection = mysqli_connect("localhost","root","");
-$db = mysqli_select_db($connection, 'Course');
+$db = mysqli_select_db($connection, 'virtualearncampus');
 
 if(isset($_POST['delete']))
 {
     $id = $_POST['id'];
 
-    $query = "DELETE FROM course_form WHERE id='$id' ";
+    $query = "DELETE FROM courses WHERE course_id='$id' ";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)
     {
         echo '<script> alert("Data Deleted"); </script>';
-        header("location:viewcourses.php");
+        header("location:courses-list.php");
     }
     else
     {

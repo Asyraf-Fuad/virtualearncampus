@@ -14,7 +14,7 @@
 
 
     }else{
-        $stmt = $conn->prepare("insert into course_form(courseName, courseID, courseDesc, courseLecID, courseDura)values(?,?,?,?,?)");
+        $stmt = $conn->prepare("insert into courses(courseName, courseID, courseDesc, courseLecID, courseDura)values(?,?,?,?,?)");
         $stmt->bind_param("sssss", $courseName,$courseID,$courseDesc,$courseLecID,$courseDura);
         $stmt->execute();
         $stmt->close();

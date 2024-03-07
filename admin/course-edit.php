@@ -26,8 +26,8 @@ leftPane('courses','course-new','admin');
         {
             ?>
                       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">PHP - CRUD : Update Data</h1>
-      </div>
+                        <h1 class="h2">PHP - CRUD : Update Data</h1>
+                        </div>
                             <form action="" method="post">
                                 <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
                                 <!-- <div class="form-group">
