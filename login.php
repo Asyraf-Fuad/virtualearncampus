@@ -35,9 +35,16 @@ include_once './database/dbconnect.php';
         </header>
     </div>
 
-
+    
     
     <div class="outside-login">
+      <div class="flex flex-col">
+      <?php
+          if (isset($_GET['status']) && $_GET['status']=='logout') {
+            echo "<div class='alert alert-success mx-5' role='alert'>You have successfully logged out.</strong></div>";
+          }
+        ?>
+        
         <main class="form-signin text-center d-flex align-items-center justify-content-center">
             <form class="mx-auto" action="database/login.inc.php" method="POST">
                 <h1 class="h3 mt-4 mb-3 fw-normal">Student Portal</h1>
@@ -62,6 +69,7 @@ include_once './database/dbconnect.php';
                     <p class="mt-5 mb-3 text-body-secondary">© VirtuLearnCampus</p>
             </form>
         </main>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

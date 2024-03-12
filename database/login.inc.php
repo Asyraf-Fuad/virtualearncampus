@@ -42,13 +42,22 @@ if (isset($_POST['login-submit'])) {
 
                     } else if ($password == $row['password']){
                      
-
                         //print_r($row);
                         session_start();
-                        header("Location: ../admin/index.php");
-                    
-                        // header("Location: ../login.php?login=success");
-                
+                        $_SESSION['loginUserid'] = $row['user_id'];
+                        $_SESSION['username'] = $row['username'];
+                        $_SESSION['role'] = $row['user_role'];
+
+                        if ($_SESSION['role'] == 'admin') {
+                            header("Location: ../admin/index.php");
+                        } else if ($_SESSION['role'] == 'student'){
+                            header("Location: ../student/index.php");
+                        } else if ($_SESSION['lecturer'] == 'lecturer'){
+                            header("Location: ../lecturer/index.php");
+                        } else {
+                            echo "User's role is unknown. Please contact admin.";
+                        }
+
                     } else {
                     
                         // echo "Wrong password, please try again.";
