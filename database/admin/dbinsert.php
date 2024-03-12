@@ -30,7 +30,7 @@ if ($_GET['table']=='courses') {
         //  print_r($conn);
          echo $result;
         if($result && mysqli_affected_rows($conn)==1) {
-            header("Location: ../../admin/courses-list.php?Entries=Successful");
+            header("Location: ../../admin/courses-list.php?Entries=AddSuccessful");
 
         }else{
         header("Location: ../../admin/courses-list.php?Entries=Error");

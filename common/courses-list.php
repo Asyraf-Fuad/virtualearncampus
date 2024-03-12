@@ -13,6 +13,12 @@
         else if (isset($_GET['Entries']) && $_GET['Entries']=='Successful') {
           echo "<div class='alert alert-success' role='alert'>Course(s) successfully added to your list. <a href='courses-mylist.php'>Click to view My Courses</a></div>";
         }
+        else if (isset($_GET['Entries']) && $_GET['Entries']=='AddSuccessful') {
+          echo "<div class='alert alert-success' role='alert'>Course successfully added.</div>";
+        }
+        else if (isset($_GET['Entries']) && $_GET['Entries']=='UpdateSuccessful') {
+          echo "<div class='alert alert-success' role='alert'>Course successfully updated.</div>";
+        }
       ?>
 
       <div class="table-responsive">
