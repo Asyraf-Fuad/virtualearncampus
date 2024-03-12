@@ -176,6 +176,41 @@ if ($page=='announcements'){
           </li>
 <?php }?>
 
+<?php function itemUsers($page, $table, $user) {
+// global $userAuth;
+if ($page=='users'){ 
+    { $activeUsers='active'; $showUsers='show';}
+    if ($table=='users-list'){$activeUsersList='active';}
+    else if ($table=='user-new'){$activeNewUser='active';}
+    else if ($table=='students-list'){$activeStudentsList='active';}
+    else if ($table=='lecturers-list'){$activeLecturersList='active';} }
+// if ($userAuth=='Admin'): ?>
+<li class='nav-item'>
+    <a class='nav-link accordion-header <?php echo $activeUsers ?>' data-bs-toggle='collapse' href='#collapseUsers' role='button' aria-expanded='false' aria-controls='collapseUsers'>
+    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-file'><path d='M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z'></path><polyline points='13 2 13 9 20 9'></polyline></svg>
+    <span data-feather='file'></span>
+    Users
+    </a>
+    <div class='<?php echo $showUsers ?> collapse' id='collapseUsers'>
+    <div class='nav-link'>
+        <ul class='nav flex-column sub-menu'>
+        <?php if ($user=='admin'){ ?>
+        <li class='nav-item'> <a class='nav-link <?php echo $activeUsersList ?>' href='users-list.php'>View All Users</a></li>
+        <li class='nav-item'> <a class='nav-link <?php echo $activeNewUser ?>' href='user-new.php'>Register New User</a></li>
+        <?php } ?>
+        <?php if ($user=='student'){ ?>
+        <li class='nav-item'> <a class='nav-link <?php echo $activeLecturersList ?>' href='lecturers-list.php'>View All Lecturers</a></li>
+        <?php } ?>  
+        <?php if ($user=='lecturer'){ ?>
+          <li class='nav-item'> <a class='nav-link <?php echo $activeStudentsList ?>' href='students-list.php'>View All Students</a></li>
+        <?php } ?>
+      </ul>
+    </div>
+    </div>
+</li>
+<!-- ?php endif; }?> -->
+<?php }?>
+
 <?php function leftPane($page, $table, $user) {?>
   <div class="container-fluid">
   <div class="row">
@@ -191,6 +226,7 @@ if ($page=='announcements'){
           itemDashboard($page);
           itemCourses($page, $table, $user);
           itemAnnouncements($page, $table, $user);
+          itemUsers($page, $table, $user);
           ?>
           
         </ul>

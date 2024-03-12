@@ -26,7 +26,7 @@ leftPane('courses','course-new','admin');
         <h1 class="h2">Register</h1> 
       </div>
 
-<form action="../database/admin/dbinsert.php" method="post">
+<form action="../database/admin/dbinsert.php?table=courses" method="post">
 <p>Please fill in this form to add new course</p>
   <label for="name">Course name:</label><br>
   <input type="text" id="course_name" name="course_name" required><br>
