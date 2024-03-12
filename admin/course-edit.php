@@ -1,6 +1,7 @@
 <?php
 
 include_once '../common/template.php';
+include_once '../database/dbconnect.php';
 
 // HTML boilerplate
 templateHeader();
@@ -11,24 +12,20 @@ leftPane('courses','course-list','admin');
 
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <?php
-
-    $connection = mysqli_connect("localhost","root","");
-    $db = mysqli_select_db($connection, 'virtualearncampus');
-
     $id = $_POST['course_id'];
 
-    $query = "SELECT * FROM courses WHERE course_id=$id";
-    $query_run = mysqli_query($connection, $query);
-    
-    if($query_run)
-    {
-        while($row = mysqli_fetch_array($result)) {     
+    $sql = "SELECT * FROM courses WHERE course_id=$id;";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if ($resultCheck >0) {
+        while ($row = mysqli_fetch_assoc($result)) {
             ?>
             
                       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">PHP - CRUD : Update Data</h1>
                         </div>
-                            <form action="" method="post">
+                            <form action="../database/admin/dbupdate.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $row['course_id'] ?>">
                                 <!-- <div class="form-group">
                                     <label for=""> id </label>
@@ -63,32 +60,6 @@ leftPane('courses','course-list','admin');
 
                                 <a href="courses-list.php" class="btn btn-danger"> CANCEL </a>
                             </form>
-                    
-                    <?php
-                    if(isset($_POST['update']))
-                    {
-                        $id = $_POST['id'];
-                        $course_name = $_POST['course_name'];
-                        $course_id = $_POST['course_id'];
-                        $course_description = $_POST['course_description'];
-                        $lecturer_id = $_POST['lecturer_id'];
-                        $course_duration = $_POST['course_duration'];
-                        $course_arrangement = $_POST['course_arrangement'];
-
-                        $query = "UPDATE courses SET course_name='$course_name', course_description='$course_description', lecturer_id='$lecturer_id', course_duration='$course_duration', course_arrangement='$course_arrangement' WHERE course_id='$course_id'  ";
-                        $query_run = mysqli_query($connection, $query);
-
-                        if($query_run)
-                        {
-                            echo '<script> alert("Data Updated"); </script>';
-                            header("location:courses-list.php");
-                        }
-                        else
-                        {
-                            echo '<script> alert("Data Not Updated"); </script>';
-                        }
-                    }
-                    ?>
 
             <?php
         }
